@@ -13,7 +13,7 @@ exports.create = async (req, res) => {
         company = company.toObject();
         const user = await User.findOne({ email }).select("+password");
         company.role = user.role;
-        Response(res, 201, "Company Registered Successfully", company);
+        Response(res, 201, "Your pitch has been successfully uploaded and is now live on the platform!", company);
     } catch (error) {
         Response(res, 500, "Company registration failed, Try Again!", error.message);
     }
